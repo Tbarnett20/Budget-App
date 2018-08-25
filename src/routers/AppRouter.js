@@ -14,7 +14,7 @@ const AppRouter = () => (
   {/* Gives us the ability to have our header on every page */}
     <Header />
     <Switch>
-    {/* {}setup component to reference a component we want to show */}
+    {/* -->{}<-- setup component to reference a component we want to show */}
       <Route path="/" component={ExpenseDashboardPage} exact={true} />
       <Route path="/create" component={AddExpensePage} />
       <Route path="/edit" component={EditExpensePage} />
