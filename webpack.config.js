@@ -3,10 +3,12 @@ const path = require('path')
 
 module.exports = {
   entry: './src/app.js',
+  mode: 'production',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  performance: { hints: false },
   module: {
     rules: [{
       loader: 'babel-loader',
