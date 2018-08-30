@@ -12,39 +12,58 @@ this.setState((prevState) => {
 const store = createStore((state = {count: 0}, action) => {
   switch (action.type) {
     case 'INCREMENT':
+    // If the action.incrementBy is a number then put that if not default to 1
+      const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
     return {
-      count: state.count + 1
+      // So now incrementBy can be 5 if its there but 1 by default ifs not. Makin it more dynamic
+      count: state.count + incrementBy
     };
     case 'DECREMENT':
+    const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
     return {
-      count: state.count - 1
+      count: state.count - decrementBy
+    };
+    case 'SET':
+    return {
+      count: action.count
     };
     case 'RESET':
     return {
-      count: state.count = 0
+      count: 0
     };
     default: 
      return state;
   }
 });
 
+const unsubscribe = store.subscribe(() => {
+  console.log(store.getState())
+});
+
 // getState() Method that returns the current states object
-console.log(store.getState())
 
 // Actions- an object that gets sent to the store
 
 // I'd like to increment the count
 store.dispatch( {
+  type: 'INCREMENT',
+  incrementBy: 5
+});
+
+store.dispatch( {
   type: 'INCREMENT'
 });
 
-console.log(store.getState())
 // I'd like to decrement the count
 
 store.dispatch( {
-  type: 'DECREMENT'
+  type: 'DECREMENT',
+  decrementBy: 10
 });
-console.log(store.getState())
+
+store.dispatch( {
+  type: 'DECREMENT',
+});
 
 // RESET count to 0
 
@@ -52,9 +71,7 @@ store.dispatch( {
   type: 'RESET'
 });
 
-
-// I'd like to reset the count to zero
-
-
-
-console.log(store.getState())
+store.dispatch( {
+  type: 'SET',
+  count: 101
+});
