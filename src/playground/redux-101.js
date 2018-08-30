@@ -23,14 +23,15 @@ const setCount = ({count} = {}) => ({
     count
 });
 
-//  No constructor function to set default state so we set it up here------------------->>>>>>>>
-const store = createStore((state = {count: 0}, action) => {
+// Reducer
+// 1. Reducers are pure functions
+// 2.Never change state or action
+
+
+const countReducer = (state = {count: 0}, action) => {
   switch (action.type) {
     case 'INCREMENT':
-    // If the action.incrementBy is a number then put that if not default to 1
-    //   const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
     return {
-      // So now incrementBy can be 5 if its there but 1 by default ifs not. Makin it more dynamic
       count: state.count + action.incrementBy
     };
     case 'DECREMENT':
@@ -39,7 +40,7 @@ const store = createStore((state = {count: 0}, action) => {
     };
     case 'SET':
     return {
-      count: action.setBy
+      count: action.count
     };
     case 'RESET':
     return {
@@ -48,7 +49,9 @@ const store = createStore((state = {count: 0}, action) => {
     default: 
      return state;
   }
-});
+};
+
+const store = createStore(countReducer);
 
 const unsubscribe = store.subscribe(() => {
   console.log(store.getState())
@@ -58,7 +61,7 @@ const unsubscribe = store.subscribe(() => {
 
 // Actions- an object that gets sent to the store
 
-// I'd like to increment the count
+//Increment the count
 
 store.dispatch(incrementCount({ incrementBy: 5 }));
 
@@ -68,7 +71,7 @@ store.dispatch(incrementCount());
 // RESET count to 0
 store.dispatch(resetCount());
 
-// I'd like to decrement the count
+//Decrement the count
 store.dispatch(decrementCount());
 
 store.dispatch(decrementCount({decrementBy: 10}));
