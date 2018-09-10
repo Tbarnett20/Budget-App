@@ -1,5 +1,5 @@
 const add = (a,b) => a + b;
-const generateGreeting = (name = 'Anonymous') => `Hello, ${name}!`
+const generateGreeting = (name = 'Anonymous') => `Hello, ${name}!`;
 
 
 test('should add two numbers', () => {
