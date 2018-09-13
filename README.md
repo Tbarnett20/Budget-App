@@ -1,4 +1,4 @@
-# Expensify App
+# Budget App
 
 # Features in Expensify App
  React
