@@ -15,22 +15,32 @@ const database = firebase.database();
 
 database.ref().set({
     name: 'Terrance Danckert',
-    age: 23,
-    isSingle: false,
-    location: {
-        city: 'Morehead',
-        country: 'United States'
+    age: 24,
+    stressLevel: 7,
+    job: {
+        title: 'Software developer',
+        company: 'Google'
     },
+    location: {
+      city: 'Morehead',
+      country: 'United States'
+  },
+}).then(() => {
+    console.log('Data is saved!');
+}).catch((e) => {
+    console.log('This failed.' , e);
 });
 
-// database.ref().set('This is my data');
+database.ref().update({
+    stressLevel: 9,
+    'job/company': 'Amazon',
+    'location/city': 'Seattle'
+})
 
-database.ref('age').set(24);
-database.ref('location/city').set('Orlando');
-database.ref('attributes').set({
-    height: 70,
-    weight: 200,
-
-});
-
-console.log('I made a request to change the data');
+// database.ref()
+//  .remove()
+//  .then(() => {
+//      console.log('Data was removed');
+//  }).catch((e) => {
+//      console.log('Did not remove data', e);
+//  })
