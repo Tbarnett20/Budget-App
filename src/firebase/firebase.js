@@ -13,11 +13,36 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`)
+database.ref('expenses').push({
+  description: 'Rent',
+  note: 'Rent for the month',
+  amount: 150000,
+  createdAt: 3253463456
 })
 
+database.ref('expenses').push({
+  description: 'Phone Bill',
+  note: 'Verizon',
+  amount: 15000,
+  createdAt: 3253463456
+})
+
+database.ref('expenses').push({
+  description: 'Wifi Bill',
+  note: 'Spectrum',
+  amount: 10000,
+  createdAt: 3253463456
+})
+
+// database.ref('notes').push({
+//   title: 'Course Topics',
+//   body: 'React Native, Angular, Python'
+// });
+
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`)
+// })
 
 
 // Fetching data
