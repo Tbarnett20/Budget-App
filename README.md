@@ -1,6 +1,6 @@
 # Budget App
 
-# Features in Expensify App
+# Features in Frugally App
  React
  Redux
  React-Router
