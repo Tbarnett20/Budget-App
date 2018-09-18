@@ -1,13 +1,13 @@
 import moment from 'moment';
 
-
 // Filters Reducer
+
 const filtersReducerDefaultState = {
-  text: '', 
+  text: '',
   sortBy: 'date',
   startDate: moment().startOf('month'),
-  endDate: moment().endOf('month'),
-  };
+  endDate: moment().endOf('month')
+};
 
 export default (state = filtersReducerDefaultState, action) => {
   switch (action.type) {
@@ -20,23 +20,23 @@ export default (state = filtersReducerDefaultState, action) => {
       return {
         ...state,
         sortBy: 'amount'
-      }
+      };
     case 'SORT_BY_DATE':
       return {
         ...state,
         sortBy: 'date'
-      }
+      };
     case 'SET_START_DATE':
       return {
         ...state,
         startDate: action.startDate
-      }
+      };
     case 'SET_END_DATE':
       return {
         ...state,
         endDate: action.endDate
-      }
+      };
     default:
-    return state;
+      return state;
   }
-}
+};
