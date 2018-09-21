@@ -3,8 +3,10 @@ html {
 }
 
 body {
+  color: $dark-gunmetal;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: $small-size;
+  font-size: $m-size;
+  line-height: 1.6;
 }
 
 button {

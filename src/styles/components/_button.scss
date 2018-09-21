@@ -1,0 +1,22 @@
+.button {
+  background: $gainsboro;
+  border: 1.5px solid $dark-gunmetal;
+  color: $dark-gunmetal;
+  display: inline-block;
+  padding: .25rem;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: $dark-gunmetal;
+  border: 1.5px solid $gainsboro;
+  color: $gainsboro;
+}
+
+.button--link {
+  background: none;
+  color: $gainsboro;
+}
