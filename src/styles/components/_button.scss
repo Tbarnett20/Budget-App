@@ -1,5 +1,5 @@
 .button {
-  background: $gainsboro;
+  background: #f4f4f4;
   border: 1.5px solid $dark-gunmetal;
   color: $dark-gunmetal;
   display: inline-block;
@@ -12,11 +12,29 @@
 
 .button:hover {
   background: $dark-gunmetal;
-  border: 1.5px solid $gainsboro;
-  color: $gainsboro;
+  border: 1.5px solid $dark-gunmetal;
+  color: #fcfffc;
 }
 
 .button--link {
   background: none;
   color: $gainsboro;
+}
+
+.button__expenseform {
+  @extend .button;
+  height: 3rem;
+  width: 11rem;
+}
+
+.button--secondary {
+  @extend .button;
+  height: 3rem;
+  width: 12rem;
+  color: #f4f4f4;
+  background: $dark-gunmetal;
+}
+.button--secondary:hover {
+  color: $dark-gunmetal;
+  background: #f4f4f4;
 }
