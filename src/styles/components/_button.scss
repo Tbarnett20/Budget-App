@@ -1,7 +1,7 @@
 .button {
-  background: #f4f4f4;
+  background: $dark-gunmetal;
   border: 1.5px solid $dark-gunmetal;
-  color: $dark-gunmetal;
+  color: $gainsboro;
   display: inline-block;
   padding: .25rem;
   line-height: 1;
@@ -13,7 +13,7 @@
 .button:hover {
   background: $dark-gunmetal;
   border: 1.5px solid $dark-gunmetal;
-  color: #fcfffc;
+  color: $off-white;
 }
 
 .button--link {
@@ -25,16 +25,47 @@
   @extend .button;
   height: 3rem;
   width: 11rem;
+  border: 1.5px solid $gainsboro;
+  border-radius: .4rem;
+  &:hover{
+    color: $dark-gunmetal;
+    background: $off-white;
+  }
 }
 
 .button--secondary {
   @extend .button;
   height: 3rem;
   width: 12rem;
-  color: #f4f4f4;
+  color: $gainsboro;
   background: $dark-gunmetal;
 }
 .button--secondary:hover {
   color: $dark-gunmetal;
-  background: #f4f4f4;
+  background: $off-white;
+}
+
+.button-login {
+  height: 5rem;
+  width: 12rem;
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 1.5rem;
+  }
+}
+
+.button-add {
+  display: block;
+  border: none;
+  border-radius: .4rem;
+  height: 3rem;
+  width: 100%;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: .20rem;
+  padding-top: .5rem;
+  padding-left: 1rem;
+  max-width: none;
+  @media (min-width: $desktop-breakpoint) {
+    width: 12rem;
+  }
 }

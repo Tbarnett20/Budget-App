@@ -9,9 +9,15 @@
 }
 
 .header__title {
-  color: #fcfffc;
+  // color: $off-white;
   text-decoration: none;
   h1 {
     margin: 0;
+    font-size: 3rem;
+    color: $gainsboro;
   }
+}
+
+.expense-total {
+  color: red;
 }

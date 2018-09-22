@@ -1,6 +1,5 @@
 .box-layout {
-  background: url('/images/bg.jpg');
-  background-size: cover;
+  background: white;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -8,14 +7,16 @@
   width: 100vw;
 }
 .box-layout__box {
-  background: fade-out(darkgrey, .15);
-  border: 1px solid $dark-gunmetal;
-  border-radius: 3px;
   padding: $l-size $m-size;
   text-align: center;
   width: 25rem;
 }
 .box-layout__title {
+  text-align: center;
   margin: 0 0 $m-size 0;
   line-height: 1;
+  font-size: 5rem;
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 7rem;
+  }
 }
